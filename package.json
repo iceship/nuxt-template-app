@@ -1,18 +1,39 @@
 {
   "name": "nuxt-app",
-  "private": true,
   "type": "module",
+  "private": true,
+  "packageManager": "pnpm@10.11.0",
   "scripts": {
     "build": "nuxt build",
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
-    "postinstall": "nuxt prepare"
+    "postinstall": "nuxt prepare",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "typecheck": "nuxi typecheck",
+    "prepare": "husky"
   },
   "dependencies": {
+    "@nuxt/eslint": "1.4.0",
+    "@nuxt/icon": "1.13.0",
+    "@nuxtjs/color-mode": "3.5.2",
+    "@tailwindcss/vite": "^4.1.7",
     "nuxt": "^3.17.3",
-    "vue": "^3.5.13",
+    "tailwindcss": "^4.1.7",
+    "vue": "^3.5.14",
     "vue-router": "^4.5.1"
   },
-  "packageManager": "pnpm@10.10.0+sha512.d615db246fe70f25dcfea6d8d73dee782ce23e2245e3c4f6f888249fb568149318637dca73c2c5c8ef2a4ca0d5657fb9567188bfab47f566d1ee6ce987815c39"
+  "devDependencies": {
+    "@antfu/eslint-config": "^4.13.1",
+    "@iconify-json/tabler": "^1.2.18",
+    "daisyui": "^5.0.35",
+    "eslint": "^9.27.0",
+    "eslint-plugin-format": "^1.0.1",
+    "husky": "^9.1.7",
+    "lint-staged": "^16.0.0"
+  },
+  "lint-staged": {
+    "*": "pnpm lint"
+  }
 }
